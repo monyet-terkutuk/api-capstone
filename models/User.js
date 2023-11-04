@@ -12,19 +12,15 @@ module.exports = (sequelize, DataTypes) => {
       },
       name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       email: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       password: {
         type: DataTypes.STRING,
-        allowNull: false,
-      },
-      token: {
-        type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       image_profile: {
         type: DataTypes.STRING,

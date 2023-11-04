@@ -1,0 +1,21 @@
+POST  http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+    "name":"Monyet Damm",
+    "email": "gabrielldd@gmail.com",
+    "password": "sdsafdaf"
+}
+
+###
+GET http://localhost:3555/users
+Content-Type: application/json
+
+###
+POST  http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    "email": "gabriellds@gmail.com",
+    "password": "sdsafdaf"
+}

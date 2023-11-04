@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
+const userHandler = require("./handlers/users");
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// Get all users data
+router.get("/", userHandler.getAllUsers);
+router.get("/", userHandler.createUser);
 
 module.exports = router;
