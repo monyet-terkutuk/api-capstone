@@ -1,17 +1,28 @@
 require("dotenv").config();
 const { User } = require("../../../models");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken"); // Anda perlu mengimpor modul jwt
+const Validator = require("fastest-validator");
+const v = new Validator();
 
-module.exports = async (req, res) => {
+const userSchema = {
+  name: { type: "string", empty: false, max: 255 },
+  email: { type: "email", empty: false },
+  password: { type: "string", min: 8, empty: false },
+};
+
+const createUser = async (req, res) => {
   const { body } = req;
 
-  if (!body.name || !body.email || !body.password) {
+  // Validasi data masukan
+  const validationResponse = v.validate(body, userSchema);
+
+  if (validationResponse !== true) {
     return res.status(400).json({
       code: 400,
       status: "error",
       data: {
-        error: "All required fields must be provided!",
+        error: "Validation failed",
+        details: validationResponse,
       },
     });
   }
@@ -50,3 +61,5 @@ module.exports = async (req, res) => {
     });
   }
 };
+
+module.exports = createUser;

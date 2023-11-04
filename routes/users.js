@@ -4,6 +4,6 @@ const userHandler = require("./handlers/users");
 
 // Get all users data
 router.get("/", userHandler.getAllUsers);
-router.get("/", userHandler.createUser);
+router.post("/", userHandler.createUser);
 
 module.exports = router;
