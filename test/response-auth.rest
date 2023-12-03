@@ -2,9 +2,9 @@ POST  http://localhost:5000/auth/register
 Content-Type: application/json
 
 {
-    "name":"Monyet Damm",
-    "email": "gabrielldd@gmail.com",
-    "password": "sdsafdaf"
+    "name":"username",
+    "email": "contoh@mail.com",
+    "password": "12345678"
 }
 
 ###
@@ -12,10 +12,12 @@ POST  http://localhost:5000/auth/login
 Content-Type: application/json
 
 {
-    "email": "gabriellds@gmail.com",
-    "password": "sdsafdaf"
+    "email": "contoh@mail.com",
+    "password": "12345678"
 }
 
+
+###
 # login with google
 GET http://localhost:5000/auth/google
 
